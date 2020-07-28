@@ -457,7 +457,7 @@ let winter = [
         overlay: "../img/overlay/winter_2.jpg",
         stil: "Acryl & Kohle",
         size: "150cm x 180cm",
-        index: 0,
+        index: 1,
     },
     {
         name: "Reset",
@@ -466,7 +466,7 @@ let winter = [
         overlay: "../img/overlay/winter_3.jpg",
         stil: "Acryl auf Leinwand",
         size: "120cm x 150cm",
-        index: 0,
+        index: 2,
     },
     {
         name: "Doing Philosophy with Ravens",
@@ -475,7 +475,28 @@ let winter = [
         overlay: "../img/overlay/winter_2.jpg",
         stil: "Acryl & Kohle",
         size: "150cm x 180cm",
+        index: 3,
+    },
+];
+
+let flood = [
+    {
+        name: "Rivernight Stories",
+        kategorie: "Winter",
+        link: "../img/bilder/flood_1.jpg",
+        overlay: "../img/overlay/flood_1.jpg",
+        stil: "Acryl auf Leinwand",
+        size: "100cm x 100cm",
         index: 0,
+    },
+    {
+        name: "Rivernight Stories",
+        kategorie: "Winter",
+        link: "../img/bilder/flood_2.jpg",
+        overlay: "../img/overlay/flood_2.jpg",
+        stil: "Acryl auf Leinwand",
+        size: "100cm x 100cm",
+        index: 1,
     },
 ];
 
@@ -483,7 +504,9 @@ let categouries = ["magnificent", "dawn"];
 
 let gridImgs = Array.from(document.getElementsByClassName("gridItem"));
 let inner = Array.from(document.getElementsByClassName("inner"));
+let topImg = Array.from(document.getElementsByClassName("topImg"));
 let tempCat;
+let stringQuery;
 
 console.log(gridImgs[0]);
 
@@ -491,6 +514,26 @@ function fillGrid(i, kategorie) {
     let rndm = Math.floor(Math.random() * kategorie.length);
     gridImgs[i].style.backgroundImage = "url(" + kategorie[rndm].overlay + ")";
     gridImgs[i].id = rndm;
+    gridImgs[i].dataset.index = kategorie[rndm].index;
+}
+
+function fillNews(kategorie) {
+    let rndm = Math.floor(Math.random() * kategorie.length);
+    topImg[0].style.backgroundImage = "url(" + kategorie[rndm].link + ")";
+}
+
+function imgUrl(i) {
+    console.log(window.location.href);
+    stringQuery =
+        "/?cat=" +
+        this.children[1].style.backgroundImage.split("/")[3].split("_")[0] +
+        "&id=" +
+        this.dataset.index;
+    console.log(stringQuery);
+    // window.location.href =
+    //     window.location.href +
+    //     "/?" +
+    //     this.children[1].style.backgroundImage.split("/")[3].split("_")[0];
 }
 
 // gridImgs[0].style.backgroundImage = "url(" + dawn[0].link + ")";
@@ -503,20 +546,17 @@ fillGrid(4, nature);
 fillGrid(5, layers);
 fillGrid(6, rainySpring);
 fillGrid(7, winter);
-fillGrid(8, dawn);
-// for (let i = 0; i < 3; i++) {
-//     fillGrid(i, dawn);
-// }
-// for (let i = 3; i < 5; i++) {
-//     fillGrid(i, garden);
-// }
-// for (let i = 5; i < 9; i++) {
-//     fillGrid(i, magnificent);
-// }
+fillGrid(8, flood);
+
+fillNews(dawn);
 
 // HOVER MAKER
 
 gridImgs.map((e, i) => {
+    // e.addEventListener("click", imgUrl);
+    // e.addEventListener("click", function () {
+    //     console.log(e);
+    // });
     e.addEventListener("mouseover", function () {
         tempCat = e.style.backgroundImage.split("/")[3].split("_")[0];
         console.log(tempCat);
@@ -550,6 +590,9 @@ gridImgs.map((e, i) => {
             } else if (tempCat == "rainyspring") {
                 this.children[1].style.backgroundImage =
                     "url(" + rainySpring[e.id].link + ")";
+            } else if (tempCat == "flood") {
+                this.children[1].style.backgroundImage =
+                    "url(" + flood[e.id].link + ")";
             }
         }
         this.children[1].classList.remove("fade-out");
@@ -566,6 +609,8 @@ gridImgs.map((e, i) => {
                 this.children[1].classList.add("fade-out");
             }, 400);
         });
+        this.addEventListener("click", imgUrl);
     });
-    // ON CLICK HREF HANDLING
 });
+
+topImg;

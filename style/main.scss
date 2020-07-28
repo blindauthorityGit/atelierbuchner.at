@@ -37,7 +37,7 @@ h3 {
     a {
         color: $primary-color;
         text-transform: uppercase;
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 }
 
@@ -47,7 +47,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    grid-column-gap: 0.75rem;
+    grid-column-gap: 0.5rem;
     grid-row-gap: 0.5rem;
     min-height: 45rem;
     width: 100%;
@@ -119,5 +119,28 @@ h3 {
 // boxes
 
 .border {
-    border: solid thin $primary-color;
+}
+
+.box {
+    border: solid 1px $light-blue;
+    // padding: 0 1px 3rem 1px;
+    padding: 2rem 2rem;
+}
+
+.titleBox {
+    position: absolute;
+    left: calc(50% - 4.7rem);
+    background: white;
+    top: -1rem;
+    padding: 0.5rem 3rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.topImg {
+    width: 100%;
+    height: 13rem;
+    background-image: url(../img/bilder/dawn_1.jpg);
+    background-size: cover;
+    background-position: center;
 }

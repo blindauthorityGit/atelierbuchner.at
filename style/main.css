@@ -24,7 +24,7 @@ h3 {
 .menuWrapper a {
   color: #292f36;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
 }
 
 .parent {
@@ -34,7 +34,7 @@ h3 {
       grid-template-columns: repeat(12, 1fr);
   -ms-grid-rows: (1fr)[6];
       grid-template-rows: repeat(6, 1fr);
-  grid-column-gap: 0.75rem;
+  grid-column-gap: 0.5rem;
   grid-row-gap: 0.5rem;
   min-height: 45rem;
   width: 100%;
@@ -156,7 +156,26 @@ h3 {
   color: #f4f4f6;
 }
 
-.border {
-  border: solid thin #292f36;
+.box {
+  border: solid 1px #c6ced8;
+  padding: 2rem 2rem;
+}
+
+.titleBox {
+  position: absolute;
+  left: calc(50% - 4.7rem);
+  background: white;
+  top: -1rem;
+  padding: 0.5rem 3rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.topImg {
+  width: 100%;
+  height: 13rem;
+  background-image: url(../img/bilder/dawn_1.jpg);
+  background-size: cover;
+  background-position: center;
 }
 /*# sourceMappingURL=main.css.map */
