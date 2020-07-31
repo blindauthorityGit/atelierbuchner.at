@@ -1,14 +1,51 @@
+.white {
+  background: white;
+}
+
+.sticky {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+}
+
+.workshopDesc {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+}
+
+.mt-50 {
+  margin-top: 5rem;
+}
+
+body,
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
 p {
   font-family: "Montserrat", sans-serif;
   color: #4a5159;
   font-size: 0.85rem;
 }
 
+h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #292f36;
+}
+
 h3 {
   font-family: "Montserrat", sans-serif;
   color: #292f36;
   text-transform: uppercase;
-  font-size: 1.25rem;
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .menuWrapper {
@@ -25,6 +62,10 @@ h3 {
   color: #292f36;
   text-transform: uppercase;
   font-size: 0.7rem;
+}
+
+.social img {
+  margin-left: 0.75rem;
 }
 
 .parent {
@@ -169,6 +210,7 @@ h3 {
   padding: 0.5rem 3rem;
   font-weight: 600;
   font-size: 0.85rem;
+  font-family: "Playfair Display", serif;
 }
 
 .topImg {
@@ -177,5 +219,57 @@ h3 {
   background-image: url(../img/bilder/dawn_1.jpg);
   background-size: cover;
   background-position: center;
+}
+
+.workshopTop {
+  width: 100%;
+  height: 14rem;
+  overflow: hidden;
+  background-size: contain;
+}
+
+.workshopTop:nth-child(even) {
+  background-color: red;
+}
+
+.workshopTop div {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  -webkit-transition: all ease-in-out 500ms;
+  transition: all ease-in-out 500ms;
+}
+
+.workshopTitle {
+  background: #292f36;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #f4f4f6;
+  padding: 1rem 0;
+  position: relative;
+  top: -2rem;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 4px;
+  font-size: 0.85rem;
+}
+
+.moreWorkshops {
+  background: #292f36;
+  padding: 4rem;
+  background-size: contain;
+}
+
+.mainButton {
+  padding: 0.5rem 3rem;
+  font-size: 0.85rem;
+  background: white;
+  border: solid thin #4a5159;
 }
 /*# sourceMappingURL=main.css.map */

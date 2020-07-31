@@ -505,6 +505,8 @@ let categouries = ["magnificent", "dawn"];
 let gridImgs = Array.from(document.getElementsByClassName("gridItem"));
 let inner = Array.from(document.getElementsByClassName("inner"));
 let topImg = Array.from(document.getElementsByClassName("topImg"));
+let imgLink = Array.from(document.getElementsByClassName("imgLink"));
+let workshopTop = Array.from(document.getElementsByClassName("workshopTop"));
 let tempCat;
 let stringQuery;
 
@@ -535,6 +537,65 @@ function imgUrl(i) {
     //     "/?" +
     //     this.children[1].style.backgroundImage.split("/")[3].split("_")[0];
 }
+
+function scaleUp(i) {
+    this.style.gridArea = "1 / 1 / 7 / 7;";
+}
+
+function workshopsHover() {
+    let newDiv = document.createElement("div");
+    this.appendChild(newDiv);
+    console.log(this);
+}
+
+// WORKSHOP BGS LOADER
+
+workshopTop.map((e, i) => {
+    switch (i) {
+        case 0:
+            e.style.backgroundImage =
+                "url(../img/workshops/sommer_overlay.png)";
+            break;
+        case 1:
+            e.style.backgroundImage =
+                "url(../img/workshops/herbst_overlay.png)";
+            break;
+        case 2:
+            e.style.backgroundImage =
+                "url(../img/workshops/winter_overlay.png)";
+            break;
+        case 3:
+            e.style.backgroundImage =
+                "url(../img/workshops/fruehling_overlay.png)";
+    }
+    // e.style.backgroundImage = "url(../img/workshops/fruehling_overlay.png)";
+    e.addEventListener("mouseover", function () {
+        if (this.childElementCount == 0) {
+            let newDiv = document.createElement("div");
+            this.appendChild(newDiv);
+            this.children[0].style.backgroundImage =
+                "url(../img/workshops/sommer.png)";
+            this.children[0].classList.remove("fade-out");
+            this.children[0].classList.remove("imgHoverOut");
+            this.children[0].classList.add("imgHoverIn");
+            console.log(i);
+        }
+        this.children[0].classList.remove("fade-out");
+
+        this.children[0].classList.remove("imgHoverOut");
+        this.children[0].classList.add("imgHoverIn");
+        this.addEventListener("mouseleave", function () {
+            this.children[0].classList.remove("imgHoverIn");
+            this.children[0].classList.add("imgHoverOut");
+
+            // this.children[0].classList.remove("slide-in-bottom");
+            // this.children[0].classList.add("slide-out-bottom");
+            setTimeout(() => {
+                this.children[0].classList.add("fade-out");
+            }, 400);
+        });
+    });
+});
 
 // gridImgs[0].style.backgroundImage = "url(" + dawn[0].link + ")";
 
@@ -610,7 +671,13 @@ gridImgs.map((e, i) => {
             }, 400);
         });
         this.addEventListener("click", imgUrl);
+        this.addEventListener("click", function () {
+            console.log(imgLink[0].getAttribute("href"));
+            imgLink[0].href = "/images.html/" + stringQuery;
+        });
     });
 });
 
-topImg;
+// setInterval(() => {
+//     console.log(document.body.getBoundingClientRect().top);
+// }, 1000);

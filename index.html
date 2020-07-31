@@ -31,83 +31,90 @@
     <body>
         <!-- TOPBAR  -->
 
-        <div class="container mt-4">
-            <div class="row">
-                <div class="col-4">
-                    <a href="index.html">
-                        <img src="./img/logo.svg" alt="" />
-                    </a>
-                </div>
-                <div class="col-6">
-                    <div class="menuWrapper">
-                        <a href="">Workshops</a>
-                        <a href="">Bilder</a>
-                        <a href="">Die Galerie</a>
-                        <a href="">Christine Buchner</a>
-                        <a href="">Kontakt</a>
+        <div class="container-fluid pb-2 mb-4 white sticky">
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-4">
+                        <a href="index.html">
+                            <img src="./img/logo.svg" alt="" />
+                        </a>
+                    </div>
+                    <div class="col-6 pt-2">
+                        <div class="menuWrapper">
+                            <a href="">Workshops</a>
+                            <a href="">Bilder</a>
+                            <a href="">Die Galerie</a>
+                            <a href="">Christine Buchner</a>
+                            <a href="">Kontakt</a>
+                        </div>
+                    </div>
+                    <div
+                        class="col-2 pt-2 d-flex justify-content-end align-items-start social"
+                    >
+                        <img src="./img/facebook.svg" alt="" />
+                        <img src="./img/instagram.svg" alt="" />
+                        <img src="./img/youtube.svg" alt="" />
                     </div>
                 </div>
-                <div
-                    class="col-2 d-flex justify-content-evenly align-items-start"
-                >
-                    <img src="./img/facebook.svg" alt="" />
-                    <img src="./img/instagram.svg" alt="" />
-                    <img src="./img/youtube.svg" alt="" />
+            </div>
+        </div>
+
+        <div class="container mt-50">
+            <!-- MASONRY GRID -->
+
+            <div class="row mt-5">
+                <div class="parent">
+                    <!-- <a class="imgLink" href="test"> -->
+                    <div class="div1 gridItem imgLink">
+                        <div class="inner">
+                            Magnificent
+                        </div>
+                    </div>
+                    <!-- </a> -->
+                    <div class="div2 gridItem">
+                        <div class="inner">
+                            Dawn
+                        </div>
+                    </div>
+                    <div class="div3 gridItem">
+                        <div class="inner">
+                            Garden
+                        </div>
+                    </div>
+                    <div class="div4 gridItem">
+                        <div class="inner">
+                            Heat
+                        </div>
+                    </div>
+                    <div class="div5 gridItem">
+                        <div class="inner">
+                            Nature
+                        </div>
+                    </div>
+                    <div class="div6 gridItem">
+                        <div class="inner">
+                            Layers
+                        </div>
+                    </div>
+                    <div class="div7 gridItem">
+                        <div class="inner">
+                            Rainy Spring
+                        </div>
+                    </div>
+                    <div class="div8 gridItem">
+                        <div class="inner">
+                            Winter
+                        </div>
+                    </div>
+                    <div class="div9 gridItem">
+                        <div class="inner">
+                            Flood
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- MASONRY GRID -->
-            <div class="row mt-5">
-                <div class="col">
-                    <div class="parent">
-                        <div class="div1 gridItem">
-                            <div class="inner">
-                                Magnificent
-                            </div>
-                        </div>
-                        <div class="div2 gridItem">
-                            <div class="inner">
-                                Dawn
-                            </div>
-                        </div>
-                        <div class="div3 gridItem">
-                            <div class="inner">
-                                Garden
-                            </div>
-                        </div>
-                        <div class="div4 gridItem">
-                            <div class="inner">
-                                Heat
-                            </div>
-                        </div>
-                        <div class="div5 gridItem">
-                            <div class="inner">
-                                Nature
-                            </div>
-                        </div>
-                        <div class="div6 gridItem">
-                            <div class="inner">
-                                Layers
-                            </div>
-                        </div>
-                        <div class="div7 gridItem">
-                            <div class="inner">
-                                Rainy Spring
-                            </div>
-                        </div>
-                        <div class="div8 gridItem">
-                            <div class="inner">
-                                Winter
-                            </div>
-                        </div>
-                        <div class="div9 gridItem">
-                            <div class="inner">
-                                Flood
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- START BOXES -->
 
             <div class="row mt-5">
                 <div class="col-6 aktuelles">
@@ -131,17 +138,115 @@
                 </div>
                 <div class="col-6 nextWorkshop">
                     <div class="titleBox">
-                        Aktuelles
+                        Nächster Kurs
                     </div>
-                    <div class="wrapper box">
-                        <div class="col-6">
-                            <img src="./img/sommerakademie_klein.jpg" alt="" />
-                        </div>
-                        <div class="col-6">
-                            <h3>Sommerakademie</h3>
+                    <div class="box">
+                        <div class="topImg"></div>
+                        <div
+                            class="wrapper d-flex flex-column justify-content-center mt-4"
+                        >
+                            <h3>SOMMERAKADEMIE</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Suscipit dicta deserunt
+                                cupiditate minima assumenda sequi doloribus qui
+                                ipsam voluptates commodi?
+                            </p>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- WORKSHOPS -->
+
+            <div class="row mt-5 mb-5">
+                <div class="col d-flex justify-content-center">
+                    <h2>Workshops</h2>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-3">
+                    <div class="inner border">
+                        <div class="workshopTop"></div>
+                        <div class="workshopTitle">Pigmente</div>
+                        <div
+                            class="workshopWrapper d-flex flex-column align-items-center"
+                        >
+                            <h3>Sommerakademie</h3>
+                            <h4>11. - 16. August 2020</h4>
+                            <span class="workshopDesc"
+                                >Pigmenttechnik mit<br />
+                                Bienenwachs</span
+                            >
+                            <button class="mainButton mt-3 mb-4">
+                                mehr Infos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="inner border">
+                        <div class="workshopTop"></div>
+                        <div class="workshopTitle">Acryl</div>
+                        <div
+                            class="workshopWrapper d-flex flex-column align-items-center"
+                        >
+                            <h3>Herbstakademie</h3>
+                            <h4>22. - 26. Oktober 2020</h4>
+                            <span class="workshopDesc"
+                                >Acryl, das <br />
+                                vielseitige Medium</span
+                            >
+                            <button class="mainButton mt-3 mb-4">
+                                mehr Infos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="inner border">
+                        <div class="workshopTop"></div>
+                        <div class="workshopTitle">Pigmente</div>
+                        <div
+                            class="workshopWrapper d-flex flex-column align-items-center"
+                        >
+                            <h3>Winterakademie</h3>
+                            <h4>coming soon</h4>
+                            <!-- <span class="workshopDesc"
+                                >Pigmenttechnik mit<br />
+                                Bienenwachs</span
+                            >
+                            <button class="mainButton mt-3 mb-4">
+                                mehr Infos
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="inner border">
+                        <div class="workshopTop"></div>
+                        <div class="workshopTitle">Pigmente</div>
+                        <div
+                            class="workshopWrapper d-flex flex-column align-items-center"
+                        >
+                            <h3>Sommerakademie</h3>
+                            <h4>11. - 16. August 2020</h4>
+                            <span class="workshopDesc"
+                                >Pigmenttechnik mit<br />
+                                Bienenwachs</span
+                            >
+                            <button class="mainButton mt-3 mb-4">
+                                mehr Infos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid moreWorkshops">
+            <div class="container">
+                <div class="row"></div>
             </div>
         </div>
 
