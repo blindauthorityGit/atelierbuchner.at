@@ -15,7 +15,7 @@
 }
 
 .mt-50 {
-  margin-top: 5rem;
+  margin-top: 8rem;
 }
 
 body,
@@ -40,12 +40,20 @@ h3 {
   color: #292f36;
   text-transform: uppercase;
   font-size: 1rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 h4 {
   font-size: 1rem;
   font-weight: 700;
+}
+
+h5 {
+  color: #536271;
+}
+
+h6 {
+  color: #c6ced8;
 }
 
 .menuWrapper {
@@ -262,8 +270,14 @@ h4 {
 
 .moreWorkshops {
   background: #292f36;
-  padding: 4rem;
+  padding: 8rem;
   background-size: contain;
+}
+
+.bottomText {
+  color: #f4f4f6;
+  font-size: 0.75rem;
+  padding: 0 15px;
 }
 
 .mainButton {
@@ -271,5 +285,17 @@ h4 {
   font-size: 0.85rem;
   background: white;
   border: solid thin #4a5159;
+}
+
+.bigImg {
+  height: 10rem;
+  background-size: cover;
+}
+
+#imgCat {
+  top: 0;
+  position: absolute;
+  color: #c6ced8;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=main.css.map */

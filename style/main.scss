@@ -30,7 +30,7 @@ $blue: #4bc0d9;
 // MARGINS
 
 .mt-50 {
-    margin-top: 5rem;
+    margin-top: 8rem;
 }
 
 // TYPO
@@ -60,12 +60,20 @@ h3 {
     color: $primary-color;
     text-transform: uppercase;
     font-size: 1rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 h4 {
     font-size: 1rem;
     font-weight: 700;
+}
+
+h5 {
+    color: $medium-blue;
+}
+
+h6 {
+    color: $light-blue;
 }
 
 // MENU AND LOGO
@@ -230,8 +238,14 @@ h4 {
 
 .moreWorkshops {
     background: $primary-color;
-    padding: 4rem;
+    padding: 8rem;
     background-size: contain;
+}
+
+.bottomText {
+    color: $light-grey;
+    font-size: 0.75rem;
+    padding: 0 15px;
 }
 
 // BUTTONS
@@ -241,4 +255,18 @@ h4 {
     font-size: 0.85rem;
     background: white;
     border: solid thin $light-text;
+}
+
+// BIG IMG
+
+.bigImg {
+    height: 10rem;
+    background-size: cover;
+}
+
+#imgCat {
+    top: 0;
+    position: absolute;
+    color: $light-blue;
+    text-transform: uppercase;
 }

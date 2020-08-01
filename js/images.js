@@ -23,7 +23,7 @@ let dawn = [
         link: "../img/bilder/dawn_3.jpg",
         overlay: "../img/overlay/dawn_3.jpg",
         stil: "Acryl auf Leinwand",
-        size: "150cm x 180cm",
+        size: "150cm x 230cm",
         index: 2,
     },
     {
@@ -32,7 +32,7 @@ let dawn = [
         link: "../img/bilder/dawn_4.jpg",
         overlay: "../img/overlay/dawn_4.jpg",
         stil: "Acryl auf Leinwand",
-        size: "150cm x 180cm",
+        size: "150cm x 220cm",
         index: 3,
     },
     {
@@ -41,7 +41,7 @@ let dawn = [
         link: "../img/bilder/dawn_5.jpg",
         overlay: "../img/overlay/dawn_5.jpg",
         stil: "Acryl auf Leinwand",
-        size: "120cm x 150cm",
+        size: "150cm x 120cm",
         index: 4,
     },
     {
@@ -89,7 +89,7 @@ let magnificent = [
         link: "../img/bilder/magnificent_1.jpg",
         overlay: "../img/overlay/magnificent_1.jpg",
         stil: "Acryl auf Leinwand",
-        size: "100cm x 120cm",
+        size: "100cm x 100cm",
         index: 0,
     },
     {
@@ -366,7 +366,7 @@ let layers = [
         index: 5,
     },
 ];
-let rainySpring = [
+let rainyspring = [
     {
         name: "Nat & Gonba",
         kategorie: "Rainy Spring",
@@ -510,24 +510,27 @@ let workshopTop = Array.from(document.getElementsByClassName("workshopTop"));
 let tempCat;
 let stringQuery;
 
-console.log(gridImgs[0]);
-
 function fillGrid(i, kategorie) {
     let rndm = Math.floor(Math.random() * kategorie.length);
-    gridImgs[i].style.backgroundImage = "url(" + kategorie[rndm].overlay + ")";
-    gridImgs[i].id = rndm;
-    gridImgs[i].dataset.index = kategorie[rndm].index;
+    if (gridImgs[i] != undefined) {
+        gridImgs[i].style.backgroundImage =
+            "url(" + kategorie[rndm].overlay + ")";
+        gridImgs[i].id = rndm;
+        gridImgs[i].dataset.index = kategorie[rndm].index;
+    }
 }
 
 function fillNews(kategorie) {
     let rndm = Math.floor(Math.random() * kategorie.length);
-    topImg[0].style.backgroundImage = "url(" + kategorie[rndm].link + ")";
+    if (topImg[0] != undefined) {
+        topImg[0].style.backgroundImage = "url(" + kategorie[rndm].link + ")";
+    }
 }
 
 function imgUrl(i) {
     console.log(window.location.href);
     stringQuery =
-        "/?cat=" +
+        "?cat=" +
         this.children[1].style.backgroundImage.split("/")[3].split("_")[0] +
         "&id=" +
         this.dataset.index;
@@ -568,13 +571,27 @@ workshopTop.map((e, i) => {
             e.style.backgroundImage =
                 "url(../img/workshops/fruehling_overlay.png)";
     }
-    // e.style.backgroundImage = "url(../img/workshops/fruehling_overlay.png)";
     e.addEventListener("mouseover", function () {
         if (this.childElementCount == 0) {
             let newDiv = document.createElement("div");
             this.appendChild(newDiv);
-            this.children[0].style.backgroundImage =
-                "url(../img/workshops/sommer.png)";
+            switch (i) {
+                case 0:
+                    this.children[0].style.backgroundImage =
+                        "url(../img/workshops/sommer.png)";
+                    break;
+                case 1:
+                    this.children[0].style.backgroundImage =
+                        "url(../img/workshops/herbst.png)";
+                    break;
+                case 2:
+                    this.children[0].style.backgroundImage =
+                        "url(../img/workshops/winter.png)";
+                    break;
+                case 3:
+                    this.children[0].style.backgroundImage =
+                        "url(../img/workshops/fruehling.png)";
+            }
             this.children[0].classList.remove("fade-out");
             this.children[0].classList.remove("imgHoverOut");
             this.children[0].classList.add("imgHoverIn");
@@ -587,9 +604,6 @@ workshopTop.map((e, i) => {
         this.addEventListener("mouseleave", function () {
             this.children[0].classList.remove("imgHoverIn");
             this.children[0].classList.add("imgHoverOut");
-
-            // this.children[0].classList.remove("slide-in-bottom");
-            // this.children[0].classList.add("slide-out-bottom");
             setTimeout(() => {
                 this.children[0].classList.add("fade-out");
             }, 400);
@@ -597,7 +611,7 @@ workshopTop.map((e, i) => {
     });
 });
 
-// gridImgs[0].style.backgroundImage = "url(" + dawn[0].link + ")";
+// GALLERY FILL
 
 fillGrid(0, magnificent);
 fillGrid(1, dawn);
@@ -605,7 +619,7 @@ fillGrid(2, garden);
 fillGrid(3, heat);
 fillGrid(4, nature);
 fillGrid(5, layers);
-fillGrid(6, rainySpring);
+fillGrid(6, rainyspring);
 fillGrid(7, winter);
 fillGrid(8, flood);
 
@@ -650,7 +664,7 @@ gridImgs.map((e, i) => {
                     "url(" + winter[e.id].link + ")";
             } else if (tempCat == "rainyspring") {
                 this.children[1].style.backgroundImage =
-                    "url(" + rainySpring[e.id].link + ")";
+                    "url(" + rainyspring[e.id].link + ")";
             } else if (tempCat == "flood") {
                 this.children[1].style.backgroundImage =
                     "url(" + flood[e.id].link + ")";
@@ -673,11 +687,39 @@ gridImgs.map((e, i) => {
         this.addEventListener("click", imgUrl);
         this.addEventListener("click", function () {
             console.log(imgLink[0].getAttribute("href"));
+            window.location.href = "/bilder.html" + stringQuery;
             imgLink[0].href = "/images.html/" + stringQuery;
         });
     });
 });
 
-// setInterval(() => {
-//     console.log(document.body.getBoundingClientRect().top);
-// }, 1000);
+// BIG IMGS
+
+let bigImg = document.querySelector("#bigImg");
+let imgTitle = document.querySelector("#imgTitle");
+let imgCat = document.querySelector("#imgCat");
+let imgTechnik = document.querySelector("#imgTechnik");
+let ratio;
+let currentCat = window.location.href.split("?")[1].split("=")[1].split("&")[0];
+let currentId = window.location.href.split("?")[1].split("=")[2];
+function fillerse(kategorie, i) {
+    ratio =
+        parseInt(kategorie[i].size.split(" ")[0]) /
+        parseInt(kategorie[i].size.split(" ")[2]);
+
+    bigImg.style.backgroundImage = "url(" + kategorie[i].link + ")";
+    bigImg.style.height = bigImg.clientWidth * ratio + "px";
+}
+
+imgTitle.innerHTML = eval(currentCat)[currentId].name;
+imgCat.innerHTML = eval(currentCat)[currentId].kategorie;
+imgTechnik.innerHTML = eval(currentCat)[currentId].stil;
+
+console.log(window.location.href.split("?")[1].split("=")[2]);
+
+console.log(currentCat);
+fillerse(eval(currentCat), currentId);
+
+// BIG IMG FILLER
+
+console.log(ratio);
