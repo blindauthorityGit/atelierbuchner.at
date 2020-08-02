@@ -270,3 +270,12 @@ h6 {
     color: $light-blue;
     text-transform: uppercase;
 }
+
+.imgThumb {
+    background-size: cover;
+    cursor: pointer;
+}
+
+#imgTitle {
+    font-size: 2rem;
+}

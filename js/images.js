@@ -699,9 +699,14 @@ let bigImg = document.querySelector("#bigImg");
 let imgTitle = document.querySelector("#imgTitle");
 let imgCat = document.querySelector("#imgCat");
 let imgTechnik = document.querySelector("#imgTechnik");
+let imgThumb = Array.from(document.getElementsByClassName("imgThumb"));
 let ratio;
 let currentCat = window.location.href.split("?")[1].split("=")[1].split("&")[0];
 let currentId = window.location.href.split("?")[1].split("=")[2];
+let catLen = eval(currentCat).length;
+
+// FILL AND SIZE THE BIG IMG
+
 function fillerse(kategorie, i) {
     ratio =
         parseInt(kategorie[i].size.split(" ")[0]) /
@@ -711,9 +716,34 @@ function fillerse(kategorie, i) {
     bigImg.style.height = bigImg.clientWidth * ratio + "px";
 }
 
+function changeBigImg(e) {
+    console.log(imgThumb.indexOf(e));
+    let index = imgThumb.indexOf(e);
+    bigImg.style.backgroundImage = "url(" + eval(currentCat)[index].link + ")";
+    imgTitle.innerHTML = eval(currentCat)[index].name;
+    imgCat.innerHTML = eval(currentCat)[index].kategorie;
+    imgTechnik.innerHTML = eval(currentCat)[index].stil;
+    console.log("url(" + eval(currentCat)[index].link + ")");
+    // bigImg.style.background = "red";
+}
+
+// BIG IMG TEXTS & BUTTONS
+
 imgTitle.innerHTML = eval(currentCat)[currentId].name;
 imgCat.innerHTML = eval(currentCat)[currentId].kategorie;
 imgTechnik.innerHTML = eval(currentCat)[currentId].stil;
+
+// THUMBNAIM GENERATOR
+
+imgThumb.map((e, i) => {
+    e.style.height = e.clientWidth + "px";
+    if (i < catLen) {
+        e.style.backgroundImage = "url(" + eval(currentCat)[i].overlay + ")";
+    }
+    e.addEventListener("click", function () {
+        changeBigImg(e);
+    });
+});
 
 console.log(window.location.href.split("?")[1].split("=")[2]);
 

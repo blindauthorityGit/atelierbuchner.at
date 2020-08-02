@@ -298,4 +298,13 @@ h6 {
   color: #c6ced8;
   text-transform: uppercase;
 }
+
+.imgThumb {
+  background-size: cover;
+  cursor: pointer;
+}
+
+#imgTitle {
+  font-size: 2rem;
+}
 /*# sourceMappingURL=main.css.map */
