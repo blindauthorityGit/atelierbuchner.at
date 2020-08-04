@@ -6,6 +6,7 @@
   position: fixed;
   z-index: 9999;
   top: 0;
+  border-bottom: solid thin #c6ced8;
 }
 
 .workshopDesc {
@@ -15,7 +16,7 @@
 }
 
 .mt-50 {
-  margin-top: 8rem;
+  margin-top: 6rem;
 }
 
 body,
@@ -284,12 +285,20 @@ h6 {
   padding: 0.5rem 3rem;
   font-size: 0.85rem;
   background: white;
-  border: solid thin #4a5159;
+  border: solid thin #c6ced8;
+}
+
+.mainButton:hover {
+  background: #292f36;
+  color: #c6ced8;
+  border: solid thin #292f36;
 }
 
 .bigImg {
-  height: 10rem;
-  background-size: cover;
+  height: 40rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #imgCat {
@@ -306,5 +315,14 @@ h6 {
 
 #imgTitle {
   font-size: 2rem;
+}
+
+#imgTechnik {
+  font-size: 0.75rem;
+}
+
+.thumbnails .col-2 {
+  padding-left: 0 !important;
+  padding-right: 0.75rem !important;
 }
 /*# sourceMappingURL=main.css.map */

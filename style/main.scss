@@ -19,6 +19,7 @@ $blue: #4bc0d9;
     position: fixed;
     z-index: 9999;
     top: 0;
+    border-bottom: solid thin $light-blue;
 }
 
 .workshopDesc {
@@ -30,7 +31,7 @@ $blue: #4bc0d9;
 // MARGINS
 
 .mt-50 {
-    margin-top: 8rem;
+    margin-top: 6rem;
 }
 
 // TYPO
@@ -254,14 +255,23 @@ h6 {
     padding: 0.5rem 3rem;
     font-size: 0.85rem;
     background: white;
-    border: solid thin $light-text;
+    border: solid thin $light-blue;
+}
+
+.mainButton:hover {
+    background: $primary-color;
+    color: $light-blue;
+    border: solid thin $primary-color;
 }
 
 // BIG IMG
 
 .bigImg {
-    height: 10rem;
-    background-size: cover;
+    height: 40rem;
+    // background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #imgCat {
@@ -278,4 +288,15 @@ h6 {
 
 #imgTitle {
     font-size: 2rem;
+}
+
+#imgTechnik {
+    font-size: 0.75rem;
+}
+
+.thumbnails {
+    .col-2 {
+        padding-left: 0 !important;
+        padding-right: 0.75rem !important;
+    }
 }

@@ -535,10 +535,6 @@ function imgUrl(i) {
         "&id=" +
         this.dataset.index;
     console.log(stringQuery);
-    // window.location.href =
-    //     window.location.href +
-    //     "/?" +
-    //     this.children[1].style.backgroundImage.split("/")[3].split("_")[0];
 }
 
 function scaleUp(i) {
@@ -699,7 +695,8 @@ let bigImg = document.querySelector("#bigImg");
 let imgTitle = document.querySelector("#imgTitle");
 let imgCat = document.querySelector("#imgCat");
 let imgTechnik = document.querySelector("#imgTechnik");
-let imgThumb = Array.from(document.getElementsByClassName("imgThumb"));
+let imgSize = document.querySelector("#imgSize");
+let imgThumb = Array.from(document.querySelectorAll(".imgThumb"));
 let ratio;
 let currentCat = window.location.href.split("?")[1].split("=")[1].split("&")[0];
 let currentId = window.location.href.split("?")[1].split("=")[2];
@@ -713,7 +710,7 @@ function fillerse(kategorie, i) {
         parseInt(kategorie[i].size.split(" ")[2]);
 
     bigImg.style.backgroundImage = "url(" + kategorie[i].link + ")";
-    bigImg.style.height = bigImg.clientWidth * ratio + "px";
+    // bigImg.style.height = bigImg.clientWidth * ratio + "px";
 }
 
 function changeBigImg(e) {
@@ -723,8 +720,21 @@ function changeBigImg(e) {
     imgTitle.innerHTML = eval(currentCat)[index].name;
     imgCat.innerHTML = eval(currentCat)[index].kategorie;
     imgTechnik.innerHTML = eval(currentCat)[index].stil;
+    imgSize.innerHTML = eval(currentCat)[index].size;
     console.log("url(" + eval(currentCat)[index].link + ")");
+    console.log(bigImg.style.backgroundImage);
     // bigImg.style.background = "red";
+}
+
+// Grey Thumb when clicked
+
+function thumbNailGrey() {
+    imgThumb.map((e, i) => {
+        if (e.style.backgroundImage != bigImg.style.backgroundImage) {
+            e.style.backgroundImage =
+                "url(" + eval(currentCat)[i].overlay + ")";
+        }
+    });
 }
 
 // BIG IMG TEXTS & BUTTONS
@@ -732,6 +742,7 @@ function changeBigImg(e) {
 imgTitle.innerHTML = eval(currentCat)[currentId].name;
 imgCat.innerHTML = eval(currentCat)[currentId].kategorie;
 imgTechnik.innerHTML = eval(currentCat)[currentId].stil;
+imgSize.innerHTML = eval(currentCat)[currentId].size;
 
 // THUMBNAIM GENERATOR
 
@@ -739,11 +750,34 @@ imgThumb.map((e, i) => {
     e.style.height = e.clientWidth + "px";
     if (i < catLen) {
         e.style.backgroundImage = "url(" + eval(currentCat)[i].overlay + ")";
+        e.setAttribute("data-id", currentCat);
+        // e.style.opacity = 0.6;
     }
+
+    e.addEventListener("mouseover", function () {
+        e.style.backgroundImage = "url(" + eval(currentCat)[i].link + ")";
+        e.style.opacity = 1;
+    });
+    e.addEventListener("mouseleave", function () {
+        if (e.style.backgroundImage != bigImg.style.backgroundImage) {
+            e.style.opacity = 0.6;
+            e.style.backgroundImage =
+                "url(" + eval(currentCat)[i].overlay + ")";
+        }
+    });
     e.addEventListener("click", function () {
         changeBigImg(e);
+        thumbNailGrey();
+        e.style.backgroundImage = bigImg.style.backgroundImage;
+        console.log(bigImg);
     });
 });
+
+// NEXT FUNCTION
+
+function next() {
+    eval(curr);
+}
 
 console.log(window.location.href.split("?")[1].split("=")[2]);
 
